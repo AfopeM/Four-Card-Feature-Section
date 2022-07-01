@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+
+:root {
+    /* ### Primary */
+
+    --Red: hsl(0, 78%, 62%);
+    --Cyan: hsl(180, 62%, 55%);
+    --Orange: hsl(34, 97%, 64%);
+    --Blue: hsl(212, 86%, 64%);
+
+    /* ### Neutral */
+
+    --Very-Dark-Blue: hsl(234, 12%, 34%);
+    --Grayish-Blue: hsl(229, 6%, 66%);
+
+    /* ### Shadow */
+    --shadow: hsla(100, 100%, 100%, 0.5);
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--Grayish-Blue);
+    height: 100vh;
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: grid;
+    gap: 4rem;
+}
+
+/* HEADER */
+header {
+    text-align: center;
+    max-width: 500px;
+    justify-self: center;
+}
+
+header h1 {
+    font-weight: 200;
+    padding: 0.5rem 0;
+}
+
+header span {
+    color: var(--Very-Dark-Blue);
+    font-weight: 600;
+}
+
+header p {
+    font-size: 0.9rem;
+    font-weight: 200;
+}
+
+/* SHOWCASE */
+.showcase {
+    display: grid;
+    grid-template-columns: 350px 350px 350px;
+    gap: 1.5rem;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    max-width: 350px;
+
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0px 10px 20px var(--Grayish-Blue, 0.1);
+}
+
+.card#cyan {
+    border-top: 0.3rem solid var(--Cyan);
+    align-self: center;
+    grid-row: 1/ 3;
+}
+
+.card#red {
+    border-top: 0.3rem solid var(--Red);
+}
+
+.card#orange {
+    border-top: 0.3rem solid var(--Orange);
+    order: 4;
+}
+
+.card#blue {
+    border-top: 0.3rem solid var(--Blue);
+    align-self: center;
+    grid-column: 3;
+    grid-row: 1/3;
+}
+
+.card img {
+    width: 25%;
+    align-self: end;
+}
+
+.card-content h3 {
+    color: var(--Very-Dark-Blue);
+    padding: 0.5rem 0;
+}
+
+.card-content p {
+    font-weight: 200;
+    font-size: 0.8rem;
+}
+
+/* MEDIA QUERY */
+@media (max-width:900px) {
+
+    body {
+        position: relative;
+        height: 1600px;
+    }
+
+    /* HEADER */
+    header h1 {
+        padding: 1rem 0;
+    }
+
+    header p {
+        font-size: 1.3rem;
+        font-weight: 400;
+    }
+
+    /* SHOWCASE */
+    .showcase {
+        grid-template-columns: 1fr;
+        justify-self: center;
+    }
+
+    .card#cyan {
+        grid-row: unset;
+    }
+
+    .card#blue {
+        grid-column: unset;
+        grid-row: unset;
+    }
+
+    .card-content h3 {
+        font-size: 1.5rem;
+    }
+
+    .card-content p {
+        font-size: 1rem;
+        font-weight: 400;
+    }
+}
